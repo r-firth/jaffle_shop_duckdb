@@ -80,3 +80,11 @@ models:
         description: Amount of the order (AUD) paid for by gift card
         tests:
           - not_null
+
+  - name: overall_avg_time_between_orders
+    description: "The average time between orders for repeat customers."
+    columns:
+      - name: overall_avg_time_between_orders
+        description: "The average time between orders across all repeat customers."
+        tests:
+          - not_null
