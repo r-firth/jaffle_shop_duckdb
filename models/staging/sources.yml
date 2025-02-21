@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: postgres
+    schema: jaffle_shop
+    tables:
+      - name: orders
+        columns:
+          - name: order_id
+          - name: customer_id
+          - name: order_date
+          - name: status
+          - name: gift_card_amount
+          - name: amount
