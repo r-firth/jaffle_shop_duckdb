@@ -29,3 +29,22 @@ models:
         tests:
           - accepted_values:
               values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']
+
+  - name: stg_gift_card_orders
+    description: Orders that include a gift card amount
+    columns:
+      - name: order_id
+        description: Primary key of the orders table
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to the customers table
+        tests:
+          - not_null
+      - name: gift_card_amount
+        description: The amount of the gift card used in the order
+        tests:
+          - not_null
+          - positive_values:
+              field: gift_card_amount
