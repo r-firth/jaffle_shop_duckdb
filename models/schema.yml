@@ -80,3 +80,21 @@ models:
         description: Amount of the order (AUD) paid for by gift card
         tests:
           - not_null
+
+  - name: customers_with_gift_cards
+    description: This view contains customers who have made purchases using gift cards
+
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for a customer
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customers')
+              field: customer_id
+
+      - name: first_name
+        description: Customer's first name. PII.
+
+      - name: last_name
+        description: Customer's last name. PII.
